@@ -1,0 +1,47 @@
+name: Sketch Art Video Processing
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  process_video:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install Dependencies
+        run: |
+          pip install opencv-python moviepy numpy
+
+      - name: Download Input Video
+        run: |
+          curl -L -o Doraemon  S20E02 [RareToonsIndia].mkv "http://gfs204n110.userstorage.mega.co.nz/dl/fn9YrF9T-hMa7gKQoJUc3r1HBLM7KmLmP3rCS6iFU2BeAI5kOgIBGiKtka1gnrzWoV1NjB4oNOGQXJ8fK805zNh6VTZuHBISJmDIPZjs1KaJ-MuJRTuYabDhJblHVh6JfYovQZLdZ4YmW1woXiGzjzSX18T2LC7L-eJdF-VynOOE_yyTRpTOtvPaVpS6jxn2l-enRqcHCaWWuRHIkCq7Pk5tPXo0l53MwlWuTaqepzMA3X-UZTNILSIQsw"
+
+      - name: Verify Downloaded Video
+        run: |
+          if [ ! -s input.mp4 ]; then
+            echo "ERROR: Input video is missing or empty!"
+            exit 1
+          fi
+
+      - name: Run Sketch Effect Script
+        run: python sketch_effect.py
+
+      - name: Check Output File
+        run: |
+          if [ ! -f "output_sketch.mp4" ]; then
+            echo "ERROR: No output video found!"
+            exit 1
+          fi
+
+      - name: Upload Processed Video to GitHub Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-sketch-video
+          path: output_sketch.mp4
