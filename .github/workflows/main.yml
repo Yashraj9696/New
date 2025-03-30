@@ -24,11 +24,11 @@ jobs:
 
       - name: Verify Downloaded Video  
         run: |  
-          if [ ! -s [Toonworld4all] Doraemon (2005) S21E18 720p x264 Multi Audio [Uncut] ]; then  
+          if [ ! -s [Toonworld4all] Doraemon (2005) S21E18 720p x264 Multi Audio [Uncut].mkv ]; then  
             echo "ERROR: Input video is missing or empty!"  
             exit 1  
           fi  
-          file [Toonworld4all] Doraemon (2005) S21E18 720p x264 Multi Audio [Uncut]  
+          file [Toonworld4all] Doraemon (2005) S21E18 720p x264 Multi Audio [Uncut].mkv  
 
       - name: Convert Video Format (if needed)  
         run: |  
