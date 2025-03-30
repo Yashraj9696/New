@@ -20,7 +20,7 @@ jobs:
 
       - name: Download Input Video  
         run: |  
-          wget -O "[Toonworld4all] Doraemon (2005) S21E18 720p x264 Multi Audio [Uncut]" "http://gfs214n102.userstorage.mega.co.nz/dl/SN2vJjDppCsC5AIW51FuqN-1esIeuyCbWlGglb1xJfjRAF-0dDNAO0lKMVvuRFOV6lEVe_ex0IkvBWN0rwTO512i7U3LZBGcIMHQ_NfSJi0882hXjCTxSQhSoyakL3D49tVm48QTgy_UYkU3RU3z2-7vbTROUR-xUd6GriEVNqPRPItml_jU5ymHea5G-2j0uf1mlVUYyzrQSZIHnajwYguy-uzTV0E44FARGrjCs7MoPxk73GBkov5Z9g"  
+          wget -O "[Toonworld4all] Doraemon (2005) S21E18 720p x264 Multi Audio [Uncut]" "https://aws.flapdoodle.cyou/download/MW9TRXBlOG5nRi1MbDd4TWYxSm1iY3BVRElYUFlXd3dIQDE3NDMzMjczOTgxNDZAMjQwOTo0MDQyOjhlOTE6ZTA4ODo2OTYwOjIxZjE6YzU5YjphMDM5QE9zeUhMYmltd3RVMHFqMnA5VXRoT3BJVjRGNmdNV2NDb2IzQjlxMHhLUG89/[Toonworld4all]%20Doraemon%20(2005)%20S21E18%20720p%20x264%20Multi%20Audio%20[Uncut].mkv"  
 
       - name: Verify Downloaded Video  
         run: |  
