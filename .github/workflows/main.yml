@@ -28,11 +28,11 @@ jobs:
             echo "ERROR: Input video is missing or empty!"  
             exit 1  
           fi  
-          file Doraemon_S20E02.mkv  
+          file [Toonworld4all] Doraemon (2005) S21E18 720p x264 Multi Audio [Uncut]  
 
       - name: Convert Video Format (if needed)  
         run: |  
-          ffmpeg -i Doraemon_S20E02.mkv -c:v libx264 -preset fast -crf 23 -c:a aac -b:a 128k output.mp4  
+          ffmpeg -i [Toonworld4all] Doraemon (2005) S21E18 720p x264 Multi Audio [Uncut] -c:v libx264 -preset fast -crf 23 -c:a aac -b:a 128k output.mp4  
 
       - name: Run Sketch Effect Script  
         run: |  
